@@ -1,0 +1,2201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Unity AI Documentation</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta name="description" content="Bootstrap 4 Template For Software Startups">
+	<meta name="author" content="Xiaoying Riley at 3rd Wave Media">
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+
+	<!-- FontAwesome JS-->
+	<script defer src="assets/fontawesome/js/all.min.js"></script>
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css">
+	<link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
+
+	<!-- Theme CSS -->
+	<link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
+
+</head>
+
+<body class="docs-page">
+	<header class="header fixed-top">
+		<div class="branding docs-branding">
+			<div class="container-fluid position-relative py-2">
+				<div class="docs-logo-wrapper">
+					<button id="docs-sidebar-toggler" class="docs-sidebar-toggler docs-sidebar-visible me-2 d-xl-none" type="button">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+					<div class="site-logo"><a class="navbar-brand" href="index.html"><img class="logo-icon me-2" src="assets/images/coderdocs-logo.svg" alt="logo"><span class="logo-text">Coder<span class="text-alt">Docs</span></span></a></div>
+				</div><!--//docs-logo-wrapper-->
+				<div class="docs-top-utilities d-flex justify-content-end align-items-center">
+					<ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
+						<li class="list-inline-item"><a href="https://github.com/Qualium-Systems-Ltd"><i class="fab fa-github fa-fw"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.facebook.com/qualiumsystems/"><i class="fab fa-facebook-f fa-fw"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.instagram.com/qualium.systems/?hl=en"><i class="fab fa-instagram fa-fw"></i></a></li>
+					</ul><!--//social-list-->
+					<a href="https://github.com/Qualium-Systems-Ltd/UnityAI/releases" class="btn btn-primary d-none d-lg-flex">Download</a>
+				</div><!--//docs-top-utilities-->
+			</div><!--//container-->
+		</div><!--//branding-->
+	</header><!--//header-->
+
+
+	<div class="docs-wrapper">
+		<div id="docs-sidebar" class="docs-sidebar">
+			<nav id="docs-nav" class="docs-nav navbar">
+				<ul class="section-items list-unstyled nav flex-column pb-3">
+					<li class="nav-item section-title"><a class="nav-link scrollto" href="#introduction"><span class="theme-icon-holder me-2"><i class="fas fa-map-signs"></i></span>Introduction</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#introduction-keyfeatures">Key Features</a></li>
+					<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#api"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>API Settings</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#api-settings">API Settings (SO)</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#api-key">Api Key</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#api-address">Api Address</a></li>
+					<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#sdmisc"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Stable Diffusion (Misc)</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#sdmisc-balance">Stable Diffusion Balance</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#sdmisc-engines">Stable Diffusion Engines List</a></li>
+					<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#sdimage"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Stable Diffusion (SDImage)</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#sdimage-request">SDImage.Request</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#sdimage-texttoimage-request">SDImage.TextToImg</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#sdimage-imgtoimg-request">SDImage.ImgToImg</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#sdimage-imgtoimgmask-request">SDImage.ImgToImgMasking</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#sdimage-imgupscale-request">SDImage.Image2xUpscale</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#sdimage-textprompt">SDImage.TextPrompt</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#sdimage-errresponse">SDImage.ErrResponse</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#sdimage-response">SDImage.Response</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#sdimage-balanceresponse">SDImage.BalanceResponse</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#sdimage-engineslist">SDImage.EnginesListResponse</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#sdimage-data">SDImage.Data</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#sdimage-engine">SDImage.Engine</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#sdimage-clipguidance">SDImage.ClipGuidance</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#sdimage-sampler">SDImage.Sampler</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#sdimage-initimagemode">SDImage.InitImageMode</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#sdimage-masksource">SDImage.MaskSource</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#sdimage-dimension">SDImage.Dimension</a></li>
+					<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#oaiimage"><span class="theme-icon-holder me-2"><i class="fas fa-box"></i></span>OpenAI Image (OAIImage)</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#oaiimage-request">OAIImage.Request</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#oaiimage-editrequest">OAIImage.EditRequest</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#oaiimage-data">OAIImage.Data</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#oaiimage-response">OAIImage.Response</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#oaiimage-error">OAIImage.Error</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#oaiimage-responseformat">OAIImage.ResponseFormat</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#oaiimage-size">OAIImage.Size</a></li>
+					<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#oaichat"><span class="theme-icon-holder me-2"><i class="fas fa-cogs"></i></span>OpenAI Chat (OAIChat)</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#oaichat-request">OAIChat.Request</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#oaichat-message">OAIChat.Message</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#oaichat-response">OAIChat.Response</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#oaichat-responsechoice">OAIChat.ResponseChoice</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#oaichat-usage">OAIChat.Usage</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#oaichat-error">OAIChat.Error</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#oaichat-model">OAIChat.Model</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#oaichat-role">OAIChat.Role</a></li>
+				</ul>
+
+			</nav><!--//docs-nav-->
+		</div><!--//docs-sidebar-->
+		<div class="docs-content">
+			<div class="container">
+				<article class="docs-article" id="introduction">
+					<header class="docs-header">
+						<h1 class="docs-heading">Introduction</h1>
+						<p>
+							Introducing UnityAI, an innovative plugin that seamlessly integrates <strong><a href="https://stability.ai/stable-diffusion">Stable Diffusion</a></strong> algorithms, <strong><a href="https://openai.com/">OpenAI's</a> <a href="https://openai.com/product/dall-e-2">DALL·E</a></strong>, and <strong><a href="https://openai.com/blog/chatgpt">ChatGPT</a></strong>, empowering users to generate diverse and interactive content within the Unity game development environment.
+
+							UnityAI combines the power of Stable Diffusion techniques with OpenAI's DALL·E, a state-of-the-art image generation model. With DALL·E, developers can effortlessly generate high-quality and visually appealing images by providing textual prompts. Whether you need realistic environments, character designs, or object models, UnityAI enables you to create stunning visuals that bring your game worlds to life.
+						</p>
+					</header>
+					<section class="docs-section" id="introduction-keyfeatures">
+						<h2>Key Features</h2>
+						<p>UnityAI boasts several key features that empower developers to leverage advanced AI capabilities within the Unity game development environment:</p>
+						<ul>
+							<li>Stable Diffusion Integration: UnityAI enables users to generate diverse and high-quality content using Stable Diffusion algorithms. From text, images, to audio, developers can create immersive narratives, realistic dialogue, procedural level designs, and more.</li>
+							<li>OpenAI's DALL·E Integration: With UnityAI, developers can seamlessly integrate OpenAI's DALL·E, a powerful image generation model. By providing textual prompts, users can effortlessly generate visually stunning and realistic graphics for environments, characters, objects, and more.</li>
+							<li>ChatGPT Integration: UnityAI incorporates ChatGPT, an advanced language model developed by OpenAI, allowing for interactive and dynamic conversations within Unity projects. This feature enables developers to create engaging interactions between players and non-player characters (NPCs), enhancing the overall gameplay experience.</li>
+							<li>Easy Integration: UnityAI provides a user-friendly interface and easy-to-use API, making it straightforward to integrate AI functionalities into Unity projects. Developers can quickly implement AI-driven behaviors, decision-making systems, and content generation with minimal effort.</li>
+						</ul>
+					</section>
+				</article><!--//docs-article-->
+
+
+
+				<article class="docs-article" id="api">
+					<header class="docs-header">
+						<h1 class="docs-heading">API Settings</h1>
+						<p>API Settings is a scriptable object used to store and manage API settings, such as API key and API endpoint, in a project.</p>
+					</header>
+					<section class="docs-section" id="api-settings">
+						<h2 class="section-heading">API Settings (Scriptable Object)</h2>
+						<p>APISettings - is a scriptable object which contains API key and API endpoint for requests. You can use default settings (you can find them in the "Assets/UnityAI/Settings" folder of your project.), but you have to set your personal <a href="#api-key">API key</a>, or you can create a new one.</p>
+						<h5>Constructor</h5>
+						<p>
+							<code>
+								public APISettings(string settingsName, string apiAddress, string apiKey)
+							</code>
+						</p>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>string</td>
+										<td>settingsName</td>
+										<td>Settings name</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>apiAddress</td>
+										<td>Endpoint address</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>apiKey</td>
+										<td>API Key</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>string</td>
+										<td>settingsName</td>
+										<td>Settings name</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>apiAddress</td>
+										<td>Endpoint address</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>apiKey</td>
+										<td>API Key</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Creation</h5>
+						<p>In "Project" overview press RMB, in drop-down menu select "Create", then "UnityAI", then "API Settings". For created object set <a href="#api-key">API key</a> and <a href="#api-address">API address</a>.</p>
+						<h5>Preview</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded">
+<code class="csharp">
+using UnityEngine;
+
+[CreateAssetMenu (menuName = "UnityAI/API Settings", fileName = "New API Settings", order = -1)]
+public class APISettings : ScriptableObject
+{
+  public string settingsName;
+  public string apiAddress;
+  public string apiKey;
+
+  public APISettings(string settingsName, string apiAddress, string apiKey)
+  {
+    this.settingsName = settingsName;
+    this.apiAddress = apiAddress;
+    this.apiKey = apiKey;
+  }
+}
+
+</code>
+</pre>
+						</div><!--//docs-code-block-->
+					</section><!--//section-->
+					<section class="docs-section" id="api-key">
+						<h2 class="section-heading">API Key</h2>
+						<p>An API key, also known as an application programming interface key, is a unique code or identifier that is used to authenticate and authorize access to an application programming interface (API).</p>
+						<h5>Stable Diffusion</h5>
+						<p>
+							For
+							<a href="#sdimage-texttoimage-request">SDImage.TextToImg</a>,
+							<a href="#sdimage-imgtoimg-request">SDImage.ImgToImg</a>,
+							<a href="#sdimage-imgtoimgmask-request">SDImage.ImgToImgMasking</a>,
+							<a href="#sdimage-imgupscale-request">SDImage.Image2xUpscale</a>,
+							Check out the <a href="https://platform.stability.ai/docs/getting-started/authentication">documentation</a> for API Key creation (<a href="https://platform.stability.ai/docs/getting-started/authentication">https://platform.stability.ai/docs/getting-started/authentication</a>).
+						</p>
+						<h5>OpenAI</h5>
+						<p>
+							For
+							<a href="#oaiimage-request">OAIImage.Request</a>,
+							<a href="#oaiimage-editrequest">OAIImage.EditRequest</a>,
+							<a href="#oaichat-request">OAIChat.Request</a>,
+							Create your account on <a href="https://platform.openai.com">OpenAI platform</a>, then visit your
+							<a href="https://platform.openai.com/account/api-keys">User settings.</a>
+						</p>
+					</section>
+					<section class="docs-section" id="api-address">
+						<h2 class="section-heading">API Address</h2>
+						<h5>Stable Diffusion</h5>
+						You can find all available addresses for Stable Diffusion <a href="https://platform.stability.ai/rest-api#tag/v1generation">here.</a>
+						<h5>OpenAI</h5>
+						You can find all available addresses for OpenAI <a href="https://platform.openai.com/docs/api-reference/">here.</a>
+					</section>
+
+				</article><!--//docs-article-->
+				<article class="docs-article" id="sdmisc">
+					<header class="docs-header">
+						<h1 class="docs-heading">Stable Diffusion (Misc)</h1>
+						<section class="docs-section" id="sdmisc-balance">
+							<h2 class="section-heading">Stable Diffusion Balance</h2>
+							<p>Get the credit balance of the account/organization associated with the API key.</p>
+							<h5>Example:</h5>
+							<div class="docs-code-block">
+								<pre class="shadow-lg rounded">
+<code class="csharp">
+using QS.StableDiffusion;
+using UnityEngine;
+
+public class ExampleClass : MonoBehaviour
+{
+	public <a href="#api">APISettings</a> sdBalanceSettings;
+	public float credits;
+
+	public void Request()
+	{
+		StartCoroutine(RequestsHandler.GetRequest(sdBalanceSettings, ResponseHandler));
+	}
+
+	public void ResponseHandler(string responseJson)
+	{
+		<a href="#sdimage-balanceresponse">BalanceResponse</a> response = <a href="#sdimage-balanceresponse">BalanceResponse</a>.FromJSON(responseJson);
+		credits = response.credits;
+	}
+}
+
+</code>
+</pre>
+							</div><!--//docs-code-block-->
+						</section><!--//section-->
+						<section class="docs-section" id="sdmisc-engines">
+							<h2 class="section-heading">Stable Diffusion Engines List</h2>
+							<p>List all engines available to your organization/user. It can be useful for custom API Settings.</p>
+							<h5>Example:</h5>
+							<div class="docs-code-block">
+								<pre class="shadow-lg rounded">
+<code class="csharp">
+using UnityEngine;
+using static QS.StableDiffusion.SDImage;
+
+public class ExampleClass : MonoBehaviour
+{
+	public <a href="#api">APISettings</a> sdEnginesListSettings;
+	public <a href="#sdimage-engineslist">Engine[]</a> engines;
+
+	public void Request()
+	{
+		StartCoroutine(RequestsHandler.GetRequest(sdEnginesListSettings, ResponseHandler));
+	}
+
+	public void ResponseHandler(string responseJson)
+	{
+		<a href="#sdimage-engineslist">EnginesListResponse</a> response = <a href="#sdimage-engineslist">EnginesListResponse</a>.FromJSON(responseJson);
+		engines = response.engines;
+	}
+}
+
+</code>
+</pre>
+							</div><!--//docs-code-block-->
+						</section><!--//section-->
+					</header>
+
+				</article><!--//docs-article-->
+
+				<article class="docs-article" id="sdimage">
+					<header class="docs-header">
+						<h1 class="docs-heading">Stable Diffusion Image (SDImage)</h1>
+						<p>Creates generated, an edited or extended image given an original image and (or) a prompt.</p>
+					</header>
+					<section class="docs-section" id="sdimage-request">
+						<h2 class="section-heading">SDImage.Request</h2>
+						<h5>Constructor</h5>
+						<p>
+							<code>
+								public Request(<a href="#sdimage-textprompt">TextPrompt[]</a> text_prompts, float cfg_scale, int samples, int steps, uint seed = 0, <a href="#sdimage-clipguidance">ClipGuidance</a> clipGuidance = <a href="#sdimage-clipguidance">ClipGuidance</a>.NONE, <a href="#sdimage-sampler">Sampler</a> sampler = <a href="#sdimage-sampler">Sampler</a>.DDIM)
+							</code>
+						</p>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td><a href="#sdimage-textprompt">TextPrompt[]</a></td>
+										<td>text_prompts</td>
+										<td>An array of text prompts to use for generation.</td>
+									</tr>
+									<tr>
+										<td>float</td>
+										<td>cfg_scale</td>
+										<td>How strictly the diffusion process adheres to the prompt text (higher values keep your image closer to prompt).</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>samples</td>
+										<td>Number of images to generate.</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>steps</td>
+										<td>Number of diffusion steps to run.</td>
+									</tr>
+									<tr>
+										<td>uint</td>
+										<td>seed</td>
+										<td>Optional. Random noise seed (omit this option or use <code>0</code> (default) for a random seed).</td>
+									</tr>
+									<tr>
+										<td><a href="#sdimage-clipguidance">ClipGuidance</a></td>
+										<td>clipGuidance</td>
+										<td>Optional.</td>
+									</tr>
+									<tr>
+										<td><a href="#sdimage-sampler">Sampler</a></td>
+										<td>sampler</td>
+										<td>Optional. Which sampler to use for the diffusion process.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td><a href="#sdimage-textprompt">TextPrompt[]</a></td>
+										<td>text_prompts</td>
+										<td>An array of text prompts to use for generation.</td>
+									</tr>
+									<tr>
+										<td>float</td>
+										<td>cfg_scale</td>
+										<td>How strictly the diffusion process adheres to the prompt text (higher values keep your image closer to prompt).</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>samples</td>
+										<td>Number of images to generate.</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>steps</td>
+										<td>Number of diffusion steps to run.</td>
+									</tr>
+									<tr>
+										<td>uint</td>
+										<td>seed</td>
+										<td>Optional. Random noise seed (omit this option or use <code>0</code> (default) for a random seed).</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>clip_guidance_preset</td>
+										<td>Optional. Stringified <a href="#sdimage-clipguidance">ClipGuidance</a>.</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>sampler</td>
+										<td>Optional. Stringified sampler.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+					<section class="docs-section" id="sdimage-texttoimage-request">
+						<h2 class="section-heading">SDImage.TextToImg</h2>
+						<h5>Constructor</h5>
+						<p>
+							<code>
+								public TextToImg(<a href="#sdimage-textprompt">TextPrompt[]</a> text_prompts, float cfg_scale, <a href="#sdimage-dimension">Dimension</a> height, <a href="#sdimage-dimension">Dimension</a> width, int samples, int steps, uint seed = 0, <a href="#sdimage-clipguidance">ClipGuidance</a> clipGuidance = <a href="#sdimage-clipguidance">ClipGuidance</a>.NONE, <a href="#sdimage-sampler">Sampler</a> sampler = <a href="#sdimage-sampler">Sampler</a>.DDIM) :
+								<br>base(text_prompts, cfg_scale, samples, steps, seed, clipGuidance, sampler)
+							</code>
+						</p>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td><a href="#sdimage-textprompt">TextPrompt[]</a></td>
+										<td>text_prompts</td>
+										<td>An array of text prompts to use for generation.</td>
+									</tr>
+									<tr>
+										<td>float</td>
+										<td>cfg_scale</td>
+										<td>How strictly the diffusion process adheres to the prompt text (higher values keep your image closer to prompt).</td>
+									</tr>
+									<tr>
+										<td><a href="#sdimage-dimension">Dimension</a></td>
+										<td>height</td>
+										<td>Image height</td>
+									</tr>
+									<tr>
+										<td><a href="#sdimage-dimension">Dimension</a></td>
+										<td>width</td>
+										<td>Image width</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>samples</td>
+										<td>Number of images to generate.</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>steps</td>
+										<td>Number of diffusion steps to run.</td>
+									</tr>
+									<tr>
+										<td>uint</td>
+										<td>seed</td>
+										<td>Optional. Random noise seed (omit this option or use <code>0</code> (default) for a random seed).</td>
+									</tr>
+									<tr>
+										<td><a href="#sdimage-clipguidance">ClipGuidance</a></td>
+										<td>clipGuidance</td>
+										<td>Optional.</td>
+									</tr>
+									<tr>
+										<td><a href="#sdimage-sampler">Sampler</a></td>
+										<td>sampler</td>
+										<td>Optional. Which sampler to use for the diffusion process.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td><a href="#sdimage-textprompt">TextPrompt[]</a></td>
+										<td>text_prompts</td>
+										<td>An array of text prompts to use for generation.</td>
+									</tr>
+									<tr>
+										<td>float</td>
+										<td>cfg_scale</td>
+										<td>How strictly the diffusion process adheres to the prompt text (higher values keep your image closer to prompt).</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>height</td>
+										<td>Image height</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>width</td>
+										<td>Image width</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>samples</td>
+										<td>Number of images to generate.</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>steps</td>
+										<td>Number of diffusion steps to run.</td>
+									</tr>
+									<tr>
+										<td>uint</td>
+										<td>seed</td>
+										<td>Optional. Random noise seed (omit this option or use <code>0</code> (default) for a random seed).</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>clip_guidance_preset</td>
+										<td>Optional. Stringified <a href="#sdimage-clipguidance">ClipGuidance</a>.</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>sampler</td>
+										<td>Optional. Stringified sampler.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Example</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded">
+<code class="csharp">
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+using static QS.StableDiffusion.SDImage;
+
+public class ExampleClass : MonoBehaviour
+{
+	public MeshRenderer imgDisplayer;
+	public List&#60;Texture2D&#62; generatedImages;
+	public <a href="#api">APISettings</a> sdTextToImgSettings;
+	public <a href="#sdimage-textprompt"><a href="#sdimage-textprompt">TextPrompt[]</a></a> textPrompts;
+	public <a href="#sdimage-clipguidance">ClipGuidance</a> clipGuidance = <a href="#sdimage-clipguidance">ClipGuidance</a>.NONE;
+	public <a href="#sdimage-sampler">Sampler</a> sampler = <a href="#sdimage-sampler">Sampler</a>.K_LMS;
+	public <a href="#sdimage-dimension">Dimension</a> height = <a href="#sdimage-dimension">Dimension</a>._512;
+	public <a href="#sdimage-dimension">Dimension</a> width = <a href="#sdimage-dimension">Dimension</a>._512;
+	[Range(1, 10)] public int samples = 1;
+	[Range(0, 35)] public float cfgScale = 4;
+	[Range(10, 150)] public int steps = 30;
+	[Range (0, 4294967295)] public uint seed = 0;
+
+	public void Generate()
+	{
+		<a href="#sdimage-texttoimage-request">SDImage.TextToImg</a> request = new <a href="#sdimage-texttoimage-request">SDImage.TextToImg</a>(textPrompts, cfgScale, height, width, samples, steps, seed, clipGuidance, sampler);
+		StartCoroutine(RequestsHandler.PostRequest(request.GenerateBody(), sdTextToImgSettings, ImageResponseHandler));
+	}
+
+	public void ImageResponseHandler(string responseJson)
+	{
+		<a href="#sdimage-response">Response</a> response = JsonUtility.FromJson&#60;<a href="#sdimage-response">Response</a>&#62;(responseJson);
+		for (int i = 0; i < response.artifacts.Length; i++)
+		{
+			string imgB64 = response.artifacts[i].base64;
+			string seed = response.artifacts[i].seed;
+			if (imgB64 != null) Utils.Base64ToImg(imgB64, TextureHandler, seed);
+		}
+	}
+
+	public void TextureHandler(Texture2D texture, string imgName)
+	{
+		EditorUtils.TextureHandler(texture, imgName, generatedImages, imgDisplayer);
+	}
+}
+
+</code>
+</pre>
+						</div><!--//docs-code-block-->
+					</section><!--//section-->
+					<section class="docs-section" id="sdimage-imgtoimg-request">
+						<h2 class="section-heading">SDImage.ImgToImg</h2>
+						<h5>Constructor</h5>
+						<p>
+							<code>
+								public ImgToImg(<a href="#sdimage-textprompt">TextPrompt[]</a> text_prompts, float cfg_scale, float image_strength, Texture2D init_image, int samples, int steps, uint seed = 0, <a href="#sdimage-clipguidance">ClipGuidance</a> clipGuidance = ClipGuidance.NONE, <a href="#sdimage-sampler">Sampler</a> sampler = <a href="#sdimage-sampler">Sampler</a>.DDIM, <a href="#sdimage-initimagemode">InitImageMode</a> init_image_mode = <a href="#sdimage-initimagemode">InitImageMode</a>.IMAGE_STRENGTH) :
+								<br>base(text_prompts, cfg_scale, samples, steps, seed, clipGuidance, sampler)
+							</code>
+						</p>
+						<h5>Constructor</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td><a href="#sdimage-textprompt">TextPrompt[]</a></td>
+										<td>text_prompts</td>
+										<td>An array of text prompts to use for generation.</td>
+									</tr>
+									<tr>
+										<td>float</td>
+										<td>cfg_scale</td>
+										<td>How strictly the diffusion process adheres to the prompt text (higher values keep your image closer to prompt).</td>
+									</tr>
+									<tr>
+										<td>float</td>
+										<td>image_strength</td>
+										<td>How much influence the <code>init_image</code> has on the diffusion process.</td>
+									</tr>
+									<tr>
+										<td>Texture2D</td>
+										<td>init_image</td>
+										<td>Image used to initialize the diffusion process, in lieu of random noise.</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>samples</td>
+										<td>Number of images to generate.</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>steps</td>
+										<td>Number of diffusion steps to run.</td>
+									</tr>
+									<tr>
+										<td>uint</td>
+										<td>seed</td>
+										<td>Optional. Random noise seed (omit this option or use <code>0</code> (default) for a random seed).</td>
+									</tr>
+									<tr>
+										<td><a href="#sdimage-clipguidance">ClipGuidance</a></td>
+										<td>clipGuidance</td>
+										<td>Optional.</td>
+									</tr>
+									<tr>
+										<td><a href="#sdimage-sampler">Sampler</a></td>
+										<td>sampler</td>
+										<td>Optional. Which sampler to use for the diffusion process.</td>
+									</tr>
+									<tr>
+										<td><a href="#sdimage-initimagemode">InitImageMode</a></td>
+										<td>init_image_mode</td>
+										<td>Optional. Whether to use to control how much influence the <code>init_image</code> has on the result.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td><a href="#sdimage-textprompt">TextPrompt[]</a></td>
+										<td>text_prompts</td>
+										<td>An array of text prompts to use for generation.</td>
+									</tr>
+									<tr>
+										<td>float</td>
+										<td>cfg_scale</td>
+										<td>How strictly the diffusion process adheres to the prompt text (higher values keep your image closer to prompt).</td>
+									</tr>
+									<tr>
+										<td>float</td>
+										<td>image_strength</td>
+										<td>How much influence the <code>init_image</code> has on the diffusion process.</td>
+									</tr>
+									<tr>
+										<td>byte[]</td>
+										<td>init_image</td>
+										<td>The image to edit as bytes array.</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>samples</td>
+										<td>Number of images to generate.</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>steps</td>
+										<td>Number of diffusion steps to run.</td>
+									</tr>
+									<tr>
+										<td>uint</td>
+										<td>seed</td>
+										<td>Random noise seed (omit this option or use <code>0</code> (default) for a random seed).</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>clip_guidance_preset</td>
+										<td>Stringified <a href="#sdimage-clipguidance">ClipGuidance</a> enum option.</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>sampler</td>
+										<td>Stringified sampler enum option.</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>init_image_mode</td>
+										<td>Stringified <a href="#sdimage-initimagemode">InitImageMode</a> enum option.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Methods</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td class="theme-bg-light">
+											<p><code>public string GenerateBody();</code></p>
+										</td>
+										<td>Returns a <code>List&#60;IMultipartFormSection&#62;</code> representation of the struct.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Example</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded">
+<code class="csharp">
+using System.Collections.Generic;
+using UnityEngine;
+using static QS.StableDiffusion.SDImage;
+
+public class ExampleClass : MonoBehaviour
+{
+	public MeshRenderer imgDisplayer;
+	public List&#60;Texture2D&#62; generatedImages;
+	public <a href="#api">APISettings</a> sdImgToImgSettings;
+	public Texture2D initialImage;
+	public <a href="#sdimage-textprompt">TextPrompt[]</a> textPrompts;
+	public <a href="#sdimage-clipguidance">ClipGuidance</a> clipGuidance = <a href="#sdimage-clipguidance">ClipGuidance</a>.NONE;
+	public <a href="#sdimage-sampler">Sampler</a> sampler = <a href="#sdimage-sampler">Sampler</a>.K_LMS;
+	public <a href="#sdimage-initimagemode">InitImageMode</a> initImageMode = <a href="#sdimage-initimagemode">InitImageMode</a>.IMAGE_STRENGTH;
+	[Range(0, 35)] public float cfgScale = 4;
+	[Range(0f, 1f)] public float image_strength = 0.35f;
+	[Range(1, 10)] public int samples = 1;
+	[Range(10, 150)] public int steps = 30;
+	[Range (0, 4294967295)] public uint seed = 0;
+
+	public override void Generate()
+	{
+		<a href="#sdimage-imgtoimg-request">ImgToImg</a> request = new <a href="#sdimage-imgtoimg-request">ImgToImg</a>(textPrompts, cfgScale, image_strength, initialImage, samples, steps, seed, clipGuidance, sampler, initImageMode);
+		StartCoroutine(RequestsHandler.PostRequest(request.GenerateBody(), sdImgToImgSettings, ImageResponseHandler));
+	}
+
+	public void ImageResponseHandler(string responseJson)
+	{
+		<a href="#sdimage-response">Response</a> response = JsonUtility.FromJson&#60;<a href="#sdimage-response">Response</a>&#62;(responseJson);
+		for (int i = 0; i < response.artifacts.Length; i++)
+		{
+			string imgB64 = response.artifacts[i].base64;
+			string seed = response.artifacts[i].seed;
+			if (imgB64 != null) Utils.Base64ToImg(imgB64, TextureHandler, seed);
+		}
+	}
+
+	public void TextureHandler(Texture2D texture, string imgName)
+	{
+		EditorUtils.TextureHandler(texture, imgName, generatedImages, imgDisplayer);
+	}
+}
+
+</code>
+</pre>
+						</div><!--//docs-code-block-->
+					</section><!--//section-->
+					<section class="docs-section" id="sdimage-imgtoimgmask-request">
+						<h2 class="section-heading">SDImage.ImgToImgMasking</h2>
+						<p>Class that represents edit request object.</p>
+						<h5>Constructor</h5>
+						<p>
+							<code>
+								public ImgToImgMasking(Texture2D init_image, Texture2D mask_image, <a href="#sdimage-textprompt">TextPrompt[]</a> text_prompts, float cfg_scale, int samples, int steps, uint seed = 0, <a href="#sdimage-clipguidance">ClipGuidance</a> clipGuidance = <a href="#sdimage-clipguidance">ClipGuidance</a>.NONE, <a href="#sdimage-sampler">Sampler</a> sampler = <a href="#sdimage-sampler">Sampler</a>.DDIM, <a href="#sdimage-masksource">MaskSource</a> mask_source = <a href="#sdimage-masksource">MaskSource</a>.INIT_IMAGE_ALPHA) :
+								<br>base(text_prompts, cfg_scale, samples, steps, seed, clipGuidance, sampler)
+							</code>
+						</p>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>Texture2D</td>
+										<td>init_image</td>
+										<td>Image used to initialize the diffusion process, in lieu of random noise.</td>
+									</tr>
+									<tr>
+										<td>Texture2D</td>
+										<td>mask_image</td>
+										<td>Grayscale mask that allows for influence over which pixels are eligible for diffusion and at what strength.</td>
+									</tr>
+									<tr>
+										<td><a href="#sdimage-textprompt">TextPrompt[]</a></td>
+										<td>text_prompts</td>
+										<td>An array of text prompts to use for generation.</td>
+									</tr>
+									<tr>
+										<td>float</td>
+										<td>cfg_scale</td>
+										<td>How strictly the diffusion process adheres to the prompt text (higher values keep your image closer to prompt).</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>samples</td>
+										<td>Number of images to generate.</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>steps</td>
+										<td>Number of diffusion steps to run.</td>
+									</tr>
+									<tr>
+										<td>uint</td>
+										<td>seed</td>
+										<td>Optional. Random noise seed (omit this option or use <code>0</code> (default) for a random seed).</td>
+									</tr>
+									<tr>
+										<td><a href="#sdimage-clipguidance">ClipGuidance</a></td>
+										<td>clipGuidance</td>
+										<td>Optional.</td>
+									</tr>
+									<tr>
+										<td><a href="#sdimage-sampler">Sampler</a></td>
+										<td>sampler</td>
+										<td>Optional. Which sampler to use for the diffusion process.</td>
+									</tr>
+									<tr>
+										<td><a href="#sdimage-masksource">MaskSource</a></td>
+										<td>mask_source</td>
+										<td>Optional. For any given pixel, the mask determines the strength of generation on a linear scale.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Constructor</h5>
+						<p>
+							<code>
+								public ImgToImgMasking(Texture2D init_image, <a href="#sdimage-textprompt">TextPrompt[]</a> text_prompts, float cfg_scale, int samples, int steps, uint seed = 0, <a href="#sdimage-clipguidance">ClipGuidance</a> clipGuidance = <a href="#sdimage-clipguidance">ClipGuidance</a>.NONE, <a href="#sdimage-sampler">Sampler</a> sampler = <a href="#sdimage-sampler">Sampler</a>.DDIM) :
+								<br>base(text_prompts, cfg_scale, samples, steps, seed, clipGuidance, sampler)
+							</code>
+						</p>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>Texture2D</td>
+										<td>init_image</td>
+										<td>Image used to initialize the diffusion process, in lieu of random noise.</td>
+									</tr>
+									<tr>
+										<td><a href="#sdimage-textprompt">TextPrompt[]</a></td>
+										<td>text_prompts</td>
+										<td>An array of text prompts to use for generation.</td>
+									</tr>
+									<tr>
+										<td>float</td>
+										<td>cfg_scale</td>
+										<td>How strictly the diffusion process adheres to the prompt text (higher values keep your image closer to prompt).</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>samples</td>
+										<td>Number of images to generate.</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>steps</td>
+										<td>Number of diffusion steps to run.</td>
+									</tr>
+									<tr>
+										<td>uint</td>
+										<td>seed</td>
+										<td>Optional. Random noise seed (omit this option or use <code>0</code> (default) for a random seed).</td>
+									</tr>
+									<tr>
+										<td><a href="#sdimage-clipguidance">ClipGuidance</a></td>
+										<td>clipGuidance</td>
+										<td>Optional.</td>
+									</tr>
+									<tr>
+										<td><a href="#sdimage-sampler">Sampler</a></td>
+										<td>sampler</td>
+										<td>Optional. Which sampler to use for the diffusion process.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>byte[]</td>
+										<td>init_image</td>
+										<td>The image to edit as bytes array.</td>
+									</tr>
+									<tr>
+										<td>byte[]</td>
+										<td>mask_image</td>
+										<td>The mask as bytes array.</td>
+									</tr>
+									<tr>
+										<td><a href="#sdimage-textprompt">TextPrompt[]</a></td>
+										<td>text_prompts</td>
+										<td>An array of text prompts to use for generation.</td>
+									</tr>
+									<tr>
+										<td>float</td>
+										<td>cfg_scale</td>
+										<td>How strictly the diffusion process adheres to the prompt text (higher values keep your image closer to prompt).</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>samples</td>
+										<td>Number of images to generate.</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>steps</td>
+										<td>Number of diffusion steps to run.</td>
+									</tr>
+									<tr>
+										<td>uint</td>
+										<td>seed</td>
+										<td>Random noise seed (omit this option or use <code>0</code> (default) for a random seed).</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>clip_guidance_preset</td>
+										<td>Stringified <a href="#sdimage-clipguidance">ClipGuidance</a> enum option.</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>sampler</td>
+										<td>Stringified sampler enum option.</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>mask_source</td>
+										<td>Stringified <a href="#sdimage-masksource">MaskSource</a> enum option.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Methods</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td class="theme-bg-light">
+											<p><code>public string GenerateBody();</code></p>
+										</td>
+										<td>Returns a <code>List&#60;IMultipartFormSection&#62;</code> representation of the struct.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Example</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded">
+<code class="csharp">
+using System.Collections.Generic;
+using UnityEngine;
+using static QS.StableDiffusion.SDImage;
+
+public class ExampleClass : Generator
+{
+  public MeshRenderer imgDisplayer;
+  public List&#60;Texture2D&#62; generatedImages;
+  public <a href="#api">APISettings</a> sdImgToImgMaskingSettings;
+  public Texture2D initialImage;
+  public Texture2D mask;
+  public <a href="#sdimage-textprompt">TextPrompt[]</a> textPrompts;
+  public <a href="#sdimage-clipguidance">ClipGuidance</a> clipGuidance = <a href="#sdimage-clipguidance">ClipGuidance</a>.NONE;
+  public <a href="#sdimage-sampler">Sampler</a> sampler = <a href="#sdimage-sampler">Sampler</a>.DDIM;
+  public <a href="#sdimage-masksource">MaskSource</a> mask_source = <a href="#sdimage-masksource">MaskSource</a>.MASK_IMAGE_BLACK;
+  [Range(0, 35)] public float cfgScale = 4;
+  [Range(1, 10)] public int samples = 1;
+  [Range(10, 150)] public int steps = 30;
+  [Range(0, 4294967295)] public uint seed = 0;
+
+  public override void Generate()
+  {
+	<a href="#sdimage-imgtoimgmask-request">ImgToImgMasking</a> request = new <a href="#sdimage-imgtoimgmask-request">ImgToImgMasking</a>(initialImage, mask, textPrompts, cfgScale, samples, steps, seed, clipGuidance, sampler, mask_source);
+    StartCoroutine(RequestsHandler.PostRequest(request.GenerateBody(), sdImgToImgMaskingSettings, ImageResponseHandler));
+  }
+
+  public void ImageResponseHandler(string responseJson)
+  {
+    <a href="#sdimage-response">Response</a> response = JsonUtility.FromJson&#60;<a href="#sdimage-response">Response</a>&#62;(responseJson);
+    for (int i = 0; i < response.artifacts.Length; i++)
+    {
+      string imgB64 = response.artifacts[i].base64;
+      string seed = response.artifacts[i].seed;
+      if (imgB64 != null) Utils.Base64ToImg(imgB64, TextureHandler, seed);
+    }
+  }
+
+  public void TextureHandler(Texture2D texture, string imgName)
+  {
+    EditorUtils.TextureHandler(texture, imgName, generatedImages, imgDisplayer);
+  }
+}
+</code>
+</pre>
+						</div><!--//docs-code-block-->
+					</section><!--//section-->
+					<section class="docs-section" id="sdimage-imgupscale-request">
+						<h2 class="section-heading">SDImage.Image2xUpscale</h2>
+						<p>Class that represents upscale request object.</p>
+						<h5>Constructor</h5>
+						<p><code>public Image2xUpscale(Texture2D image)</code></p>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>Texture2D</td>
+										<td>image</td>
+										<td>The image to upscale array.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>byte[]</td>
+										<td>image</td>
+										<td>The image to upscale as bytes array.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Methods</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td class="theme-bg-light">
+											<p><code>public string GenerateBody();</code></p>
+										</td>
+										<td>Returns a <code>List&#60;IMultipartFormSection&#62;</code> representation of the struct.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Example</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded">
+<code class="csharp">
+using System.Collections.Generic;
+using UnityEngine;
+using static QS.StableDiffusion.SDImage;
+
+public class ExampleClass : Generator
+{
+  public MeshRenderer imgDisplayer;
+  public List&#60;Texture2D&#62; generatedImages;
+  public <a href="#api">APISettings</a> sdImgUpscaleSettings;
+  public Texture2D image;
+
+  public override void Generate()
+  {
+	<a href="#sdimage-imgupscale-request">Image2xUpscale</a> request = new <a href="#sdimage-imgupscale-request">Image2xUpscale</a>(image);
+    StartCoroutine(RequestsHandler.PostRequest(request.GenerateBody(), sdImgUpscaleSettings, ImageResponseHandler));
+  }
+
+  public void ImageResponseHandler(string responseJson)
+  {
+	<a href="#sdimage-response">Response</a> response = JsonUtility.FromJson&#60;<a href="#sdimage-response">Response</a>&#62;(responseJson);
+    for (int i = 0; i < response.artifacts.Length; i++)
+    {
+      string imgB64 = response.artifacts[i].base64;
+      if (imgB64 != null) Utils.Base64ToImg(imgB64, TextureHandler, image.name);
+    }
+  }
+
+  public void TextureHandler(Texture2D texture, string imgName)
+  {
+    EditorUtils.TextureHandler(texture, imgName, generatedImages, imgDisplayer);
+  }
+}
+
+</code>
+</pre>
+						</div><!--//docs-code-block-->
+					</section><!--//section-->
+					<section class="docs-section" id="sdimage-textprompt">
+						<h2 class="section-heading">SDImage.TextPrompt</h2>
+						<p>Struct that represents prompt object.</p>
+						<h5>Constructor</h5>
+						<p><code>public TextPrompt(string text, float weight)</code></p>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>string</td>
+										<td>text</td>
+										<td>A text description of the desired image(s).</td>
+									</tr>
+									<tr>
+										<td>float</td>
+										<td>weight</td>
+										<td>
+											<strong>[Range: (-1...1)]</strong>
+											The prompt weight to control how much influence the <code>prompt</code> has on the result.
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>string</td>
+										<td>prompt</td>
+										<td>A text description of the desired image(s).</td>
+									</tr>
+									<tr>
+										<td>float</td>
+										<td>weight</td>
+										<td>
+											<strong>[Range: (-1...1)]</strong>
+											The prompt weight to control how much influence the <code>prompt</code> has on the result.
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+					<section class="docs-section" id="sdimage-errresponse">
+						<h2 class="section-heading">SDImage.ErrResponse</h2>
+						<p>Class</p>
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>string</td>
+										<td>id</td>
+										<td>Error id.</td>
+									<tr>
+										<td>string</td>
+										<td>name</td>
+										<td>Error name.</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>message</td>
+										<td>Error message.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+					<section class="docs-section" id="sdimage-response">
+						<h2 class="section-heading">SDImage.Response</h2>
+						<p>Class</p>
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>SDImage[]</td>
+										<td>data</td>
+										<td>Array of generated images.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+					<section class="docs-section" id="sdimage-balanceresponse">
+						<h2 class="section-heading">SDImage.BalanceResponse</h2>
+						<p>Class</p>
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>float</td>
+										<td>credits</td>
+										<td>Available amount of tokens.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+					<section class="docs-section" id="sdimage-engineslist">
+						<h2 class="section-heading">SDImage.EnginesListResponse</h2>
+						<p>Class</p>
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>SDImage.Engine</td>
+										<td>engines</td>
+										<td>Array of available engines.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+					<section class="docs-section" id="sdimage-data">
+						<h2 class="section-heading">SDImage.Data</h2>
+						<p>Struct</p>
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>string</td>
+										<td>base64</td>
+										<td>Generated image as byte64 string.</td>
+									<tr>
+										<td>string</td>
+										<td>finishReason</td>
+										<td>Generation finish reason.</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>seed</td>
+										<td>Generated image seed.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+					<section class="docs-section" id="sdimage-engine">
+						<h2 class="section-heading">SDImage.Engine</h2>
+						<p>Struct</p>
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>string</td>
+										<td>description</td>
+										<td>Engine description.</td>
+									<tr>
+										<td>string</td>
+										<td>id</td>
+										<td>Engine id.</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>name</td>
+										<td>Engine name.</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>type</td>
+										<td>Engine type.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+					<section class="docs-section" id="sdimage-clipguidance">
+						<h2 class="section-heading">SDImage.ClipGuidance</h2>
+						<p>Enum. Default: "NONE"</p>
+						<h5>Options</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>FAST_BLUE</td>
+									</tr>
+									<tr>
+										<td>FAST_GREEN</td>
+									</tr>
+									<tr>
+										<td>NONE</td>
+									</tr>
+									<tr>
+										<td>SIMPLE</td>
+									</tr>
+									<tr>
+										<td>SLOW</td>
+									</tr>
+									<tr>
+										<td>SLOWER</td>
+									</tr>
+									<tr>
+										<td>SLOWEST</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+					<section class="docs-section" id="sdimage-sampler">
+						<h2 class="section-heading">SDImage.Sampler</h2>
+						<p>Enum. Which sampler to use for the diffusion process.</p>
+						<h5>Options</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>DDIM</td>
+									</tr>
+									<tr>
+										<td>DDPM</td>
+									</tr>
+									<tr>
+										<td>K_DPMPP_2M</td>
+									</tr>
+									<tr>
+										<td>K_DPMPP_2S_ANCESTRAL</td>
+									</tr>
+									<tr>
+										<td>K_DPM_2</td>
+									</tr>
+									<tr>
+										<td>K_DPM_2_ANCESTRAL</td>
+									</tr>
+									<tr>
+										<td>K_EULER</td>
+									</tr>
+									<tr>
+										<td>K_EULER_ANCESTRAL</td>
+									</tr>
+									<tr>
+										<td>K_HEUN</td>
+									</tr>
+									<tr>
+										<td>K_LMS</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+					<section class="docs-section" id="sdimage-initimagemode">
+						<h2 class="section-heading">SDImage.InitImageMode</h2>
+						<p>Enum. Whether to use to control how much influence the <code>init_image</code> has on the result.</p>
+						<h5>Options</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<th class="theme-bg-light">IMAGE_STRENGTH</th>
+										<td><p>How much influence the <code>init_image</code> has on the diffusion process.</p></td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+					<section class="docs-section" id="sdimage-masksource">
+						<h2 class="section-heading">SDImage.MaskSource</h2>
+						<p>Enum. Determines where to source the mask from.</p>
+						<h5>Options</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<th class="theme-bg-light">MASK_IMAGE_BLACK</th>
+										<td><p>will use the black pixels of the <code>mask_image</code> as the mask, where black pixels are completely replaced and white pixels are unchanged</p></td>
+									</tr>
+									<tr>
+										<th class="theme-bg-light">MASK_IMAGE_WHITE</th>
+										<td><p>will use the white pixels of the <code>mask_image</code> as the mask, where white pixels are completely replaced and black pixels are unchanged</p></td>
+									</tr>
+									<tr>
+										<th class="theme-bg-light">INIT_IMAGE_ALPHA</th>
+										<td><p>will use the alpha channel of the <code>init_image</code> as the mask, where fully transparent pixels are completely replaced and fully opaque pixels are unchanged</p></td>
+
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+					<section class="docs-section" id="sdimage-dimension">
+						<h2 class="section-heading">SDImage.Dimension</h2>
+						<p>Enum. Represents available image dimensions in pixels.</p>
+						<h5>Options</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td class="theme-bg-light">512</td>
+									</tr>
+									<tr>
+										<td class="theme-bg-light">576</td>
+									</tr>
+									<tr>
+										<td class="theme-bg-light">640</td>
+									</tr>
+									<tr>
+										<td class="theme-bg-light">704</td>
+									</tr>
+									<tr>
+										<td class="theme-bg-light">768</td>
+									</tr>
+									<tr>
+										<td class="theme-bg-light">832</td>
+									</tr>
+									<tr>
+										<td class="theme-bg-light">896</td>
+									</tr>
+									<tr>
+										<td class="theme-bg-light">960</td>
+									</tr>
+									<tr>
+										<td class="theme-bg-light">1024</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+				</article><!--//docs-article-->
+				<!--#endregion-->
+				<!--//////////////////////////////////////////////////////-->
+				<!--#region OPENAI Image-->
+
+				<article class="docs-article" id="oaiimage">
+					<header class="docs-header">
+						<h1 class="docs-heading">OpenAI Image (OAIImage)</h1>
+						<p>Creates generated, an edited or extended image given an original image and (or) a prompt.</p>
+					</header>
+
+					<section class="docs-section" id="oaiimage-request">
+						<h2 class="section-heading">OAIImage.Request</h2>
+						<p>Struct that represents request to Open AI Image Edit API endpoint</p>
+						<h5>Constructor</h5>
+						<p><code>public Request(string prompt, int amountOfImages, <a href="#oaiimage-size">Size</a> size, <a href="#oaiimage-responseformat">ResponseFormat</a> responseFormat)</code></p>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>string</td>
+										<td>prompt</td>
+										<td>A text description of the desired image(s). The maximum length is 1000 characters.</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>amountOfImages</td>
+										<td>
+											<strong>[Range: (1...10)]</strong>
+											The number of images to generate.
+										</td>
+									</tr>
+
+									<tr>
+										<td><a href="#oaiimage-size">OAIImage.Size</a></td>
+										<td>size</td>
+										<td>The size of the generated images.</td>
+									</tr>
+									<tr>
+										<td><a href="#oaiimage-responseformat">OAIImage.ResponseFormat</a></td>
+										<td>responseFormat</td>
+										<td>The format in which the generated images are returned.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>string</td>
+										<td>prompt</td>
+										<td>A text description of the desired image(s). The maximum length is 1000 characters.</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>n</td>
+										<td>
+											<strong>[Range: (1...10)]</strong>
+											The number of images to generate.
+										</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>size</td>
+										<td>The size of the generated images.</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>response_format</td>
+										<td>The format in which the generated images are returned.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Methods</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td class="theme-bg-light">
+											<p><code>public string GenerateBody();</code></p>
+										</td>
+										<td>Returns a stringified JSON representation of the struct.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Example</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded">
+<code class="csharp">
+using System.Collections.Generic;
+using UnityEngine;
+using static QS.OpenAI.OAIImage;
+
+public class ExampleClass : MonoBehaviour
+{
+	public MeshRenderer imgDisplayer;
+	public List&#60;Texture2D&#62; generatedImages;
+	public <a href="#api">APISettings</a> oaiImgSettings;
+	public string imgPrompt;
+	public <a href="#oaiimage-size">Size</a> imgSize = <a href="#oaiimage-size">Size</a>._512x512;
+	public <a href="#oaiimage-responseformat">ResponseFormat</a> responseFormat = <a href="#oaiimage-responseformat">ResponseFormat</a>.b64_json;
+	[Range(1, 10)] public int samples = 1;
+
+	public void Generate()
+	{
+		<a href="#oaiimage-request">Request</a> request = new <a href="#oaiimage-request">Request</a>(imgPrompt, samples, imgSize, responseFormat);
+		StartCoroutine(RequestsHandler.PostRequest(request.GenerateBody(), oaiImgSettings, ImageResponseHandler));
+	}
+
+	public void ImageResponseHandler(string responseJson)
+	{
+		<a href="#oaiimage-response">Response</a> response = JsonUtility.FromJson&#60;<a href="#oaiimage-response">Response</a>&#62;(responseJson);
+		string imgName = response.created.ToString();
+		for (int i = 0; i < response.data.Length; i++)
+		{
+			string imgUrl = response.data[i].url;
+			string imgB64 = response.data[i].b64_json;
+			if (imgUrl != null) StartCoroutine(Utils.UrlToImg(imgUrl, TextureHandler));
+			if (imgB64 != null) Utils.Base64ToImg(imgB64, TextureHandler, imgName);
+		}
+	}
+
+	public void TextureHandler(Texture2D texture, string imgName)
+	{
+		EditorUtils.TextureHandler(texture, imgName, generatedImages, imgDisplayer);
+	}
+}
+
+</code>
+</pre>
+						</div><!--//docs-code-block-->
+					</section><!--//section-->
+
+					<section class="docs-section" id="oaiimage-editrequest">
+						<h2 class="section-heading">OAIImage.EditRequest</h2>
+						<p>Struct that represents request to Open AI Image Edit API endpoint</p>
+						<h5>Constructor</h5>
+						<p><code>public EditRequest(Texture2D image, Texture2D mask, string prompt, int amountOfImages, <a href="#oaiimage-size">Size</a> size, <a href="#oaiimage-responseformat">ResponseFormat</a> responseFormat)</code></p>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr id="oaiimage-image-ref">
+										<td>Texture2D</td>
+										<td>image</td>
+										<td>The image to edit.</td>
+									<tr>
+										<td>Texture2D</td>
+										<td>mask</td>
+										<td>An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where image should be edited.</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>prompt</td>
+										<td>A text description of the desired image(s). The maximum length is 1000 characters.</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>amountOfImages</td>
+										<td>
+											<strong>[Range: (1...10)]</strong>
+											The number of images to generate.
+										</td>
+									</tr>
+
+									<tr>
+										<td><a href="#oaiimage-size">OAIImage.Size</a></td>
+										<td>size</td>
+										<td>The size of the generated images.</td>
+									</tr>
+									<tr>
+										<td><a href="#oaiimage-responseformat">OAIImage.ResponseFormat</a></td>
+										<td>responseFormat</td>
+										<td>The format in which the generated images are returned.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Constructor</h5>
+						<p><code>public EditRequest(Texture2D image, string prompt, int amountOfImages, <a href="#oaiimage-size">Size</a> size, <a href="#oaiimage-responseformat">ResponseFormat</a> responseFormat)</code></p>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr id="oaiimage-image-ref">
+										<td>Texture2D</td>
+										<td>image</td>
+										<td>The image to edit with fully transparent areas (e.g. where alpha is zero) indicate where image should be edited.</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>prompt</td>
+										<td>A text description of the desired image(s). The maximum length is 1000 characters.</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>amountOfImages</td>
+										<td>
+											<strong>[Range: (1...10)]</strong>
+											The number of images to generate.
+										</td>
+									</tr>
+
+									<tr>
+										<td><a href="#oaiimage-size">OAIImage.Size</a></td>
+										<td>size</td>
+										<td>The size of the generated images.</td>
+									</tr>
+									<tr>
+										<td><a href="#oaiimage-responseformat">OAIImage.ResponseFormat</a></td>
+										<td>responseFormat</td>
+										<td>The format in which the generated images are returned.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>string</td>
+										<td>prompt</td>
+										<td>A text description of the desired image(s). The maximum length is 1000 characters.</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>n</td>
+										<td>
+											<strong>[Range: (1...10)]</strong>
+											The number of images to generate.
+										</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>size</td>
+										<td>The size of the generated images.</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>response_format</td>
+										<td>The format in which the generated images are returned.</td>
+									</tr>
+									<tr>
+										<td>byte[]</td>
+										<td>image</td>
+										<td>The image to edit as bytes array.</td>
+									</tr>
+									<tr>
+										<td>byte[]</td>
+										<td>mask</td>
+										<td>The mask as bytes array.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Methods</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td class="theme-bg-light">
+											<p><code>public string GenerateBody();</code></p>
+										</td>
+										<td>Returns a <code>List&#60;IMultipartFormSection&#62;</code> representation of the struct.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Example</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded">
+<code class="csharp">
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+using static QS.OpenAI.OAIImage;
+
+
+public class ExampleClass : MonoBehaviour
+{
+	public MeshRenderer imgDisplayer;
+	public List&#60;Texture2D&#62; generatedImages;
+	public <a href="#api">APISettings</a> oaiImgEditSettings;
+	public Texture2D sourceImage;
+	public Texture2D mask;
+	public string imgPrompt;
+	publci <a href="#oaiimage-size">Size</a> imgSize = <a href="#oaiimage-size">Size</a>._512x512;
+	public <a href="#oaiimage-responseformat">ResponseFormat</a> responseFormat = <a href="#oaiimage-responseformat">ResponseFormat</a>.b64_json;
+	[Range(1, 10)] public int samples = 1;
+
+	public void Generate()
+	{
+		Texture2D inputTexture = Utils.MergeMask(sourceImage, mask);
+		<a href="#oaiimage-editrequest">OAIImage.EditRequest</a> request = new <a href="#oaiimage-editrequest">OAIImage.EditRequest</a>(inputTexture, imgPrompt, samples, imgSize, responseFormat);
+		StartCoroutine(RequestsHandler.PostRequest(request.GenerateBody(), oaiImgEditSettings, ImageResponseHandler));
+	}
+
+	public void ImageResponseHandler(string responseJson)
+	{
+    <a href="#oaiimage-response">Response</a> response = JsonUtility.FromJson&#60;<a href="#oaiimage-response">Response</a>&#62;(responseJson);
+		string imgName = response.created.ToString();
+		for (int i = 0; i < response.data.Length; i++)
+		{
+			string imgUrl = response.data[i].url;
+			string imgB64 = response.data[i].b64_json;
+			if (imgUrl != null) StartCoroutine(Utils.UrlToImg(imgUrl, TextureHandler));
+			if (imgB64 != null) Utils.Base64ToImg(imgB64, TextureHandler, imgName);
+		}
+	}
+
+	public void TextureHandler(Texture2D texture, string imgName)
+	{
+		EditorUtils.TextureHandler(texture, imgName, generatedImages, imgDisplayer);
+	}
+}
+
+</code>
+</pre>
+						</div><!--//docs-code-block-->
+					</section><!--//section-->
+
+					<section class="docs-section" id="oaiimage-data">
+						<h2 class="section-heading">OAIImage.Data</h2>
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>string</td>
+										<td>url</td>
+										<td>Generated image as url.</td>
+									<tr>
+										<td>string</td>
+										<td>b64_json</td>
+										<td>Generated image as base64 string.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+
+					<section class="docs-section" id="oaiimage-response">
+						<h2 class="section-heading">OAIImage.Response</h2>
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>int</td>
+										<td>code</td>
+										<td>Error code</td>
+									<tr>
+										<td><a href="#oaiimage-data">OAIImage.Data</a></td>
+										<td>data</td>
+										<td>Generated images</td>
+									</tr>
+									<tr>
+										<td><a href="#oaiimage-error">OAIImage.Error</a></td>
+										<td>error</td>
+										<td>Errors</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+
+					<section class="docs-section" id="oaiimage-error">
+						<h2 class="section-heading">OAIImage.Error</h2>
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>string</td>
+										<td>code</td>
+										<td>Error code</td>
+									<tr>
+										<td>string</td>
+										<td>message</td>
+										<td>Error message</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>param</td>
+										<td>Error parameters</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>type</td>
+										<td>Error type</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+
+					<section class="docs-section" id="oaiimage-responseformat">
+						<h2 class="section-heading">OAIImage.ResponseFormat</h2>
+						<p>Enum represents available response fromats.</p>
+						<h5>Options</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<th class="theme-bg-light">url</th>
+										<td>Image as blob URL.</td>
+									</tr>
+									<tr>
+										<th class="theme-bg-light">b64_json</th>
+										<td>Image as base64 stringified JSON.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+
+					<section class="docs-section" id="oaiimage-size">
+						<h2 class="section-heading">OAIImage.Size</h2>
+						<p>Enum represents available images sizes.</p>
+						<h5>Options</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td class="theme-bg-light">256x256</td>
+									</tr>
+									<tr>
+										<td class="theme-bg-light">512x512</td>
+									</tr>
+									<tr>
+										<td class="theme-bg-light">1024x1024</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+				</article><!--//docs-article-->
+				<!--#endregion-->
+				<!--//////////////////////////////////////////////////////-->
+				<!--#region OPENAI CHAT-->
+
+
+
+				<article class="docs-article" id="oaichat">
+					<header class="docs-header">
+						<h1 class="docs-heading">OpenAI Chat (OAIChat)</h1>
+						<section class="docs-intro">
+							<p>Given a list of messages describing a conversation, the model will return a response.</p>
+						</section><!--//docs-intro-->
+					</header>
+					<section class="docs-section" id="oaichat-request">
+						<h2 class="section-heading">OAIChat.Request</h2>
+						<p>Struct that represents request to Open AI API</p>
+						<h5>Constructor</h5>
+						<p><code>public Request(<a href="#oaichat-model">OAIChat.Model</a> model, <a href="#oaichat-message">OAIChat.Messages[]</a> messages, float temperature = 1, int maxTokens = 512)</code></p>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td><a href="#oaichat-model">OAIChat.Model</a></td>
+										<td>model</td>
+										<td>Enum. ID of the model to use. See the <a href="https://platform.openai.com/docs/models/model-endpoint-compatibility">model endpoint compatibility</a> table for details on which models work with the Chat API.</td>
+									<tr>
+										<td><a href="#oaichat-message">OAIChat.Messages[]</a></td>
+										<td>messages</td>
+										<td>A list of messages describing the conversation so far.</td>
+									</tr>
+									<tr>
+										<td class="theme-bg-light">float</td>
+										<td>temperature</td>
+										<td><strong>[Range( 0...2)]</strong> What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.</td>
+									</tr>
+									<tr>
+										<td class="theme-bg-light">int</td>
+										<td>maxTokens</td>
+										<td>
+											<strong>[Range: (0...4096)]</strong>
+											The maximum number of tokens to generate in the chat completion.
+											The total length of input tokens and generated tokens is limited by the model's context length.
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>string</a></td>
+										<td>model</td>
+										<td>Enum. ID of the model to use. See the <a href="https://platform.openai.com/docs/models/model-endpoint-compatibility">model endpoint compatibility</a> table for details on which models work with the Chat API.</td>
+									<tr>
+										<td class="theme-bg-light"><a href="#oaichat-message">OAIChat.Messages[]</a></td>
+										<td>messages</td>
+										<td>A list of messages describing the conversation so far.</td>
+									</tr>
+									<tr>
+										<td class="theme-bg-light">float</td>
+										<td>temperature</td>
+										<td><strong>[Range( 0...2)]</strong> What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.</td>
+									</tr>
+									<tr>
+										<td class="theme-bg-light">int</td>
+										<td>maxTokens</td>
+										<td>
+											<strong>[Range: (0...4096)]</strong>
+											The maximum number of tokens to generate in the chat completion.
+											The total length of input tokens and generated tokens is limited by the model's context length.
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Methods</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td class="theme-bg-light">
+											<p><code>public string GenerateBody();</code></p>
+										</td>
+										<td>Returns a stringified JSON representation of the struct.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Example</h5>
+						<div class="docs-code-block">
+							<pre class="shadow-lg rounded">
+<code class="csharp">
+using System.Collections.Generic;
+using UnityEngine;
+using static QS.OpenAI.OAIChat;
+
+public class ExampleClass : MonoBehaviour
+{
+	public <a href="#api">APISettings</a> oaiChatSettings;
+	public string chatRequest;
+	public <a href="#oaichat-model">Model</a> chatModel = <a href="#oaichat-model">Model</a>.ChatGPT3_5_turbo;
+	[Range(0, 2f)] public float temperature = 1;
+	[Range(0, 4096)] public int maxTokens = 1024;
+
+	public List&#60;<a href="#oaichat-message">Message</a>&#62; messagesHistory = new List&#60;<a href="#oaichat-message">Message</a>&#62;();
+
+	private void Start()
+	{
+		Request();
+	}
+
+	public void Request()
+	{
+		<a href="#oaichat-message">Message</a> msg = new <a href="#oaichat-message">Message</a>(<a href="#oaichat-role">Role</a>.User, chatRequest);
+		messagesHistory.Add(msg);
+		<a href="#oaichat-request">Request</a> request = new <a href="#oaichat-request">Request</a>(chatModel, messagesHistory.ToArray(), temperature, maxTokens);
+		StartCoroutine(RequestsHandler.PostRequest(request.<a href="#oaichat-request">GenerateBody()</a>, oaiChatSettings, ChatResponseHandler));
+	}
+
+	public void ChatResponseHandler(string responseJson)
+	{
+		<a href="#oaichat-response">Response</a> response = JsonUtility.FromJson<<a href="#oaichat-response">Response</a>>(responseJson);
+		<a href="#oaichat-message">Message</a> msg = new <a href="#oaichat-message">Message</a>(<a href="#oaichat-role">Role</a>.Assistant, response.choices[0].message.content);
+		messagesHistory.Add(msg);
+	}
+}
+
+</code>
+</pre>
+						</div><!--//docs-code-block-->
+					</section><!--//section-->
+
+					<section class="docs-section" id="oaichat-message">
+						<h2 class="section-heading">OAIChat.Message</h2>
+						<p>Struct that represents message.</p>
+						<h5>Constructor</h5>
+						<p><code>public Message(<a href="#oaichat-role">OAIChat.Role</a> role, string content)</code></p>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td class="theme-bg-light"><a href="#oaichat-role">OAIChat.Role</a></td>
+										<td>role</td>
+										<td>The role of the author of this message.</td>
+									<tr>
+										<td class="theme-bg-light">string</td>
+										<td>content</td>
+										<td>The contents of the message.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>string</td>
+										<td>role</td>
+										<td>The role of the author of this message.</td>
+									<tr>
+										<td>string</td>
+										<td>content</td>
+										<td>The contents of the message.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+
+					<section class="docs-section" id="oaichat-response">
+						<h2 class="section-heading">OAIChat.Response</h2>
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>string</td>
+										<td>id</td>
+										<td>Response id</td>
+									<tr>
+										<td>int</td>
+										<td>created</td>
+										<td>Timestamp</td>
+									</tr>
+									<tr>
+										<td><a href="#oaichat-responsechoice">OAIChat.ResponseChoice[]</a></td>
+										<td>choices</td>
+										<td>Generated choices</td>
+									</tr>
+									<tr>
+										<td><a href="#oaichat-usage">OAIChat.Usage</a></td>
+										<td>usage</td>
+										<td>Tokens usage</td>
+									</tr>
+									<tr>
+										<td><a href="#oaichat-error">OAIChat.Error</a></td>
+										<td>error</td>
+										<td>Errors</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+
+					<section class="docs-section" id="oaichat-responsechoice">
+						<h2 class="section-heading">OAIChat.ResponseChoice</h2>
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>int</td>
+										<td>index</td>
+										<td>Choice's index</td>
+									<tr>
+										<td><a href="#oaichat-message">OAIChat.Message</a></td>
+										<td>message</td>
+										<td>Generated message</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>finish_reason</td>
+										<td>Generation finish reason</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+
+					<section class="docs-section" id="oaichat-usage">
+						<h2 class="section-heading">OAIChat.Usage</h2>
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>int</td>
+										<td>prompt_tokens</td>
+										<td>Amount of the prompt tokens</td>
+									<tr>
+										<td>int</td>
+										<td>completion_tokens</td>
+										<td>Amount of the completion tokens</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>total_tokens</td>
+										<td>Total tokens amount</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+
+					<section class="docs-section" id="oaichat-error">
+						<h2 class="section-heading">OAIChat.Error</h2>
+						<h5>Properties</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td>string</td>
+										<td>code</td>
+										<td>Error code</td>
+									<tr>
+										<td>string</td>
+										<td>message</td>
+										<td>Error message</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>param</td>
+										<td>Error parameters</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>type</td>
+										<td>Error type</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+
+					<section class="docs-section" id="oaichat-model">
+						<h2 class="section-heading">OAIChat.Model</h2>
+						<p>Enum represents available chat models.</p>
+						<h5>Options</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td class="theme-bg-light">gpt-3.5-turbo</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+
+					<section class="docs-section" id="oaichat-role">
+						<h2 class="section-heading">OAIChat.Role</h2>
+						<p>Enum represents available roles.</p>
+						<h5>Options</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tbody>
+									<tr>
+										<td class="theme-bg-light">User</td>
+									</tr>
+									<tr>
+										<td class="theme-bg-light">Assistant</td>
+									</tr>
+									<tr>
+										<td class="theme-bg-light">System</td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!--//table-responsive-->
+					</section><!--//section-->
+				</article><!--//docs-article-->
+				<!--#endregion-->
+				<footer class="footer">
+					<div class="container text-center py-5">
+
+						<ul class="social-list list-unstyled pt-4 mb-0">
+							<li class="list-inline-item"><a href="https://github.com/Qualium-Systems-Ltd"><i class="fab fa-github fa-fw"></i></a></li>
+							<li class="list-inline-item"><a href="https://www.facebook.com/qualiumsystems/"><i class="fab fa-facebook-f fa-fw"></i></a></li>
+							<li class="list-inline-item"><a href="https://www.instagram.com/qualium.systems/?hl=en"><i class="fab fa-instagram fa-fw"></i></a></li>
+						</ul><!--//social-list-->
+						<!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+						<small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart" style="color: #fb866a;"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+					</div>
+				</footer>
+			</div>
+		</div>
+	</div><!--//docs-wrapper-->
+	<!-- Javascript -->
+	<script src="assets/plugins/popper.min.js"></script>
+	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+
+	<!-- Page Specific JS -->
+	<script src="assets/plugins/smoothscroll.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+	<script src="assets/js/highlight-custom.js"></script>
+	<script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>
+	<script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
+	<script src="assets/js/docs.js"></script>
+
+</body>
+</html>
+
